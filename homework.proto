@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package homework;
+
+option go_package = "homeworkpb";
+
+
+
+service HomeworkChecker {
+    rpc CheckHomework(CheckHomeworkRequest) returns (CheckHomeworkResponse);
+}
+
+message CheckHomeworkRequest {
+    int32 homework = 1;
+    string code = 2;
+}
+
+message CheckHomeworkResponse {
+    int32 homework = 1;
+    int32 grade = 2;
+}
